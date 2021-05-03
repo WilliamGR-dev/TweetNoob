@@ -40,7 +40,7 @@ class Post extends Component
 
         $post = auth()->user()->likes()->create(['post_id' => $idSelected, 'user_id' => $userId]);
 
-        $this->emit('likeAdded', $post->post_id);
+//        $this->emit('likeAdded', $post->post_id);
 
         $this->isliked[$idSelected] = true;
         $this->howManyLiked[$idSelected] = count(Like::where('post_id', $idSelected)->get());
